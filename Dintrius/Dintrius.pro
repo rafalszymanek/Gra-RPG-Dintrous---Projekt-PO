@@ -25,10 +25,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    confirmnewgame.cpp \
+    confirmloadgame.cpp \
+    confirmquitgame.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    confirmnewgame.h \
+    confirmloadgame.h \
+    confirmquitgame.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    confirmnewgame.ui \
+    confirmloadgame.ui \
+    confirmquitgame.ui
+
+RESOURCES += \
+    img/images.qrc

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>CreatorCharacter</class>
+ <widget class="QMainWindow" name="CreatorCharacter">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
@@ -20,76 +20,22 @@
    <string>Dintrous</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="backgroundMenu">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>-30</x>
-      <y>0</y>
-      <width>1081</width>
-      <height>671</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Backgorund-start-menu.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="logo">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>0</y>
-      <width>600</width>
-      <height>251</height>
+      <x>300</x>
+      <y>240</y>
+      <width>371</width>
+      <height>151</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Avenir</family>
-      <pointsize>144</pointsize>
-      <italic>true</italic>
+      <pointsize>72</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:144pt; color:#d2d2d2;&quot;&gt;Dintrous&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="newGame">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>320</y>
-      <width>300</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nowa gra</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="loadGame">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>380</y>
-      <width>300</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Wczytaj grę</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="quitGame">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>440</y>
-      <width>300</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Wyjdź z gry</string>
+     <string>Test</string>
     </property>
    </widget>
   </widget>
