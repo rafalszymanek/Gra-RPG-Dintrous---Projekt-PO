@@ -1,5 +1,8 @@
 #include "confirmnewgame.h"
 #include "ui_confirmnewgame.h"
+#include "charactercreator.h"
+
+#include <QApplication>
 
 confirmNewGame::confirmNewGame(QWidget *parent) :
     QDialog(parent),
@@ -17,6 +20,11 @@ confirmNewGame::~confirmNewGame()
 void confirmNewGame::on_ButtonYes_clicked()
 {
     this->close();
+    characterCreator alertNewGame; // Zmienna do otworznia nowego
+    alertNewGame.setModal(true);
+    alertNewGame.exec();
+
+
 }
 
 void confirmNewGame::on_ButtonNo_clicked()

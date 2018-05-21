@@ -3,6 +3,7 @@
 #include "confirmnewgame.h"
 #include "confirmloadgame.h"
 #include "confirmquitgame.h"
+#include "charactercreator.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -21,7 +22,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_newGame_clicked()
 {
-    confirmNewGame alertNewGame;
+    confirmNewGame alertNewGame; // Zmienna do otworznia nowego
     alertNewGame.setModal(true);
     alertNewGame.exec();
 }
@@ -38,4 +39,12 @@ void MainWindow::on_quitGame_clicked()
     confirmQuitGame alertQuitGame;
     alertQuitGame.setModal(true);
     alertQuitGame.exec();
+}
+
+
+void MainWindow::showCharacterCreator(){
+      auto win = new characterCreator();
+      win->setAttribute( Qt::WA_DeleteOnClose );
+      win->show();
+      deleteLater();
 }

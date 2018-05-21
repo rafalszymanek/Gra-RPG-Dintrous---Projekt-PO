@@ -16,4 +16,5 @@ confirmQuitGame::~confirmQuitGame()
 void confirmQuitGame::on_ButtonYes_clicked()
 {
     this->close();
+    QCoreApplication::quit();
 }

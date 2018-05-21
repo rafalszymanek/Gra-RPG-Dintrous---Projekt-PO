@@ -1,5 +1,6 @@
 #include "confirmloadgame.h"
 #include "ui_confirmloadgame.h"
+#include "charactercreator.h"
 
 confirmLoadGame::confirmLoadGame(QWidget *parent) :
     QDialog(parent),
@@ -15,7 +16,9 @@ confirmLoadGame::~confirmLoadGame()
 
 void confirmLoadGame::on_ButtonYes_clicked()
 {
+
     this->close();
+
 }
 
 void confirmLoadGame::on_ButtonNo_clicked()

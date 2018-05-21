@@ -28,19 +28,36 @@ SOURCES += \
         mainwindow.cpp \
     confirmnewgame.cpp \
     confirmloadgame.cpp \
-    confirmquitgame.cpp
+    confirmquitgame.cpp \
+    charactercreator.cpp \
+    dialogarea.cpp \
+    fightarea.cpp
 
 HEADERS += \
         mainwindow.h \
     confirmnewgame.h \
     confirmloadgame.h \
-    confirmquitgame.h
+    confirmquitgame.h \
+    charactercreator.h \
+    charactercreator.h \
+    charactercreator.h \
+    dialogarea.h \
+    fightarea.h
 
 FORMS += \
         mainwindow.ui \
     confirmnewgame.ui \
     confirmloadgame.ui \
-    confirmquitgame.ui
+    confirmquitgame.ui \
+    charactercreator.ui \
+    dialogarea.ui \
+    fightarea.ui
 
 RESOURCES += \
     img/images.qrc
+
+DISTFILES += \
+    img/dialog background.jpg \
+    img/fightbackground.jpeg \
+    img/handel background.jpg \
+    img/dialog background.jpg
