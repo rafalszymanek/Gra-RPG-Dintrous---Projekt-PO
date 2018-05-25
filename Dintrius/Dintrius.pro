@@ -31,7 +31,9 @@ SOURCES += \
     confirmquitgame.cpp \
     charactercreator.cpp \
     dialogarea.cpp \
-    fightarea.cpp
+    fightarea.cpp \
+    playercharacter.cpp \
+    worrior.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +44,9 @@ HEADERS += \
     charactercreator.h \
     charactercreator.h \
     dialogarea.h \
-    fightarea.h
+    fightarea.h \
+    playercharacter.h \
+    worrior.h
 
 FORMS += \
         mainwindow.ui \
