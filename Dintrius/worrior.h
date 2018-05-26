@@ -14,6 +14,8 @@ public:
     virtual int attack2();
     virtual int attack3();
 
+    virtual void gainDamage(int dmg);
+
     // Pozostale systemy walki
     virtual void treatCharacter();
     virtual void energyDrink();
@@ -21,6 +23,7 @@ public:
 
     // Wyswietl info o postaci
     virtual void info();
+    virtual bool isDead();
 
 };
 

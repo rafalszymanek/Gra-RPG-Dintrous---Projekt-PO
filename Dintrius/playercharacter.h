@@ -14,6 +14,15 @@ protected:
     int strength;
     int faith;
     int treatment;
+    
+    // Aktualny stan jednostki
+    int currentHealth;
+    int currentEnergy;
+    int currentMana;
+    
+    int maxHealth;
+    int maxEnergy;
+    int maxMana;
 public:
     playerCharacter(std::string kName = "", int kHealth = 0, int kEnergy = 0, int kMana = 0, int kStrength = 0, int kFaith = 0, int kTreatment = 0);
     ~playerCharacter();
@@ -23,6 +32,8 @@ public:
     virtual int attack2() = 0;
     virtual int attack3() = 0;
 
+    virtual void gainDamage(int dmg) = 0;
+
     // Pozostale systemy walki
     virtual void treatCharacter() = 0;
     virtual void energyDrink() = 0;
@@ -30,6 +41,7 @@ public:
 
     // Wyswietl info o postaci
     virtual void info() = 0;
+    virtual bool isDead() = 0;
 
 
 };

@@ -33,7 +33,9 @@ SOURCES += \
     dialogarea.cpp \
     fightarea.cpp \
     playercharacter.cpp \
-    worrior.cpp
+    worrior.cpp \
+    opponent.cpp \
+    murlok.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,7 +48,9 @@ HEADERS += \
     dialogarea.h \
     fightarea.h \
     playercharacter.h \
-    worrior.h
+    worrior.h \
+    opponent.h \
+    murlok.h
 
 FORMS += \
         mainwindow.ui \
