@@ -1,6 +1,8 @@
-#include "worrior.h"
 #include <ctime>
 #include <iostream>
+
+#include "worrior.h"
+#include "opponent.h"
 
 using namespace std;
 
@@ -34,19 +36,23 @@ worrior::~worrior(){
 // System walki znajduje sie w arkuszu
 // Ataki
 
-int worrior::attack1(){
+int worrior::attack1(opponentCharacter* opponent){
     // Atak mieczem
+    int dmg = 0;
     
     if (currentEnergy >= 15) {
         srand(time( NULL ) );
         currentEnergy -= 15;
         int critick = rand() % 12 + 1;
         if(critick == 12){
-            
-            return strength * 3.5;
+            dmg = strength * 3.5;
+            opponent -> gainDamage(dmg);
+            return dmg;
         }
         else{
-            return strength * (rand()%(30-15 + 1) + 15) / 10; // losuj z zakresu (nie mozemy randa  double)
+            dmg = strength * (rand()%(30-15 + 1) + 15) / 10; // losuj z zakresu (nie mozemy randa  double)
+            opponent->gainDamage(dmg);
+            return dmg;
         }
     }
     else{

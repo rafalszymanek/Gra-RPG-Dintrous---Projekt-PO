@@ -38,7 +38,7 @@ void murlok::info(){
 
 bool murlok::isDead(){
     if(currentHealth<=0){
-        cout << "Umarłeś!" << endl;
+        cout << "Murlok nie żyje!" << endl;
         return true;
     }
     else

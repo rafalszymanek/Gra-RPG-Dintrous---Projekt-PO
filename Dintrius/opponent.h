@@ -3,7 +3,7 @@
 
 #include <string>
 
-class opponent
+class opponentCharacter
 {
 protected:
     std::string name;
@@ -11,8 +11,8 @@ protected:
     int strenght;
     int mana;
 public:
-    opponent();
-    ~opponent();
+    opponentCharacter();
+    ~opponentCharacter();
     virtual int attack()=0;
     virtual void gainDamage(int dmg) = 0;
     virtual void info() = 0;

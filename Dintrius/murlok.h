@@ -3,7 +3,7 @@
 #include "opponent.h"
 
 
-class murlok:public opponent
+class murlok:public opponentCharacter
 {
 public:
     murlok(int lvl = 1, std::string name = "Murlok");

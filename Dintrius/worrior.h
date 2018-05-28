@@ -1,6 +1,7 @@
 #ifndef WORRIOR_H
 #define WORRIOR_H
 #include "playercharacter.h"
+#include "opponent.h"
 
 class worrior:public playerCharacter
 {
@@ -10,7 +11,7 @@ public:
     ~worrior();
 
     // Atak
-    virtual int attack1();
+    virtual int attack1(opponentCharacter* opponent);
     virtual int attack2();
     virtual int attack3();
 

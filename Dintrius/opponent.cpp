@@ -1,6 +1,6 @@
 #include "opponent.h"
 
-opponent::opponent()
+opponentCharacter::opponentCharacter()
 {
 
 }

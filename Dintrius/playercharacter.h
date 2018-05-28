@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include "opponent.h"
+
 class playerCharacter
 {
 protected:
@@ -28,7 +30,7 @@ public:
     ~playerCharacter();
 
     // Atakowanie
-    virtual int attack1() = 0;
+    virtual int attack1(opponentCharacter* opponent) = 0;
     virtual int attack2() = 0;
     virtual int attack3() = 0;
 
