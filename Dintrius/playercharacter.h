@@ -31,8 +31,8 @@ public:
 
     // Atakowanie
     virtual int attack1(opponentCharacter* opponent) = 0;
-    virtual int attack2() = 0;
-    virtual int attack3() = 0;
+    virtual int attack2(opponentCharacter* opponent) = 0;
+    virtual int attack3(opponentCharacter* opponent) = 0;
 
     virtual void gainDamage(int dmg) = 0;
 

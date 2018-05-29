@@ -9,10 +9,10 @@ class controlerOfFight
     playerCharacter* player;
     opponentCharacter* opponent;
 public:
-    controlerOfFight(playerCharacter *player);
+    controlerOfFight(playerCharacter *player, opponentCharacter *kOpponent);
     ~controlerOfFight();
     
-    void fight();
+    int fight();
 };
 
 #endif // CONTROLEROFFIGHT_H

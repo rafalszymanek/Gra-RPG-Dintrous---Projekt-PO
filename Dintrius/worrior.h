@@ -12,8 +12,8 @@ public:
 
     // Atak
     virtual int attack1(opponentCharacter* opponent);
-    virtual int attack2();
-    virtual int attack3();
+    virtual int attack2(opponentCharacter* opponent);
+    virtual int attack3(opponentCharacter* opponent);
 
     virtual void gainDamage(int dmg);
 

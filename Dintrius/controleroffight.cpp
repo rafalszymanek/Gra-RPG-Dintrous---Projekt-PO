@@ -4,7 +4,9 @@
 #include "controleroffight.h"
 
 using namespace std;
-
+/*
+    Funkcja - Menu wyboru, którego ataku chce użyć gracz. (Niepotrzebne w graficznym)
+ */
 int whichAttackOfPlayer(){
     int choiceOfPlayer;
     for(;;){
@@ -45,46 +47,116 @@ int whichAttackOfPlayer(){
     return 0;
 }
 
-controlerOfFight::controlerOfFight(playerCharacter *kPlayer)
+controlerOfFight::controlerOfFight(playerCharacter *kPlayer, opponentCharacter *kOpponent)
 {
     player = kPlayer;
+    opponent = kOpponent;
 }
 
 controlerOfFight::~controlerOfFight(){
     player = NULL;
     opponent = NULL;
 }
-
-
-void controlerOfFight::fight(){
+/*
+ Co kiedy zwraca?
+ 1 - wygral gracz
+ 0 - wygral przeciwnik
+ */
+int controlerOfFight::fight(){
     srand(time( NULL ) );
     int dmg = 0;
-    int health = 0;
-    int energy = 0;
-    int mana = 0;
+    int opponentDmg = 0;
     
     
     int whoStartFight = rand() % 3; // 0 lub 2 Rozpoczyna gracz / 1 rozpoczyna przeciwnik
+    
+    ///////////////
+    // ROZPOCZYNA GRACZ
+    //////////////
     if (whoStartFight == 0 || whoStartFight == 2) {
         cout << "Rozpoczyna gracz" << endl;
         for (;;) {
             int choiceOfPlayer = whichAttackOfPlayer();
             if (choiceOfPlayer == 1) {
-                dmg = player->attack1(opponent);
+                dmg = player->attack1(opponent);    // Odrazu w funkcji przecwinik otrzymuje obrażenia
             }
             else if (choiceOfPlayer == 2){
-                dmg = player->attack2();
+                dmg = player->attack2(opponent);    // Odrazu w funkcji przecwinik otrzymuje obrażenia
             }
             else if (choiceOfPlayer == 3){
-                dmg = player->attack3();
+                dmg = player->attack3(opponent);    // Odrazu w funkcji przecwinik otrzymuje obrażenia
             }
             else if (choiceOfPlayer == 4){
-                health = player->attack2();
+                player->treatCharacter();
+            }
+            else if (choiceOfPlayer == 5){
+                player->energyDrink();
+            }
+            else if (choiceOfPlayer == 6){
+                player->manaDrink();
             }
             
+            if (opponent->isDead() == true) {
+                return 1;   // WYGRAŁ GRACZ
+            }
+            
+            opponentDmg = opponent->attack();
+            player->gainDamage(opponentDmg);    // Gracz nie otrzymuje obrażeń w funkcji. Trzeba użyc osobnej funkcji
+            
+            cout << "------------------------" << endl;
+            player->info();
+            cout << "------------------------" << endl;
+            opponent -> info();
+            cout << "------------------------" << endl;
+            if (player->isDead() == true) {
+                return 0;   // WYGRAŁ PRZECIWNIK
+            }
+            
+            
         }
+        ///////////////
+        // ROZPOCZYNA PRZECIWNIK
+        //////////////
     }
     else{
         cout << "Rozpoczyna przeciwnik" << endl;
+        for(;;){
+            opponentDmg = opponent->attack();
+            player->gainDamage(opponentDmg);            // Gracz nie otrzymuje obrażeń w funkcji. Trzeba użyc osobnej funkcji
+            
+            if (player->isDead() == true) {
+                return 0;   // WYGRAŁ PRZECIWNIK
+            }
+                int choiceOfPlayer = whichAttackOfPlayer();
+                if (choiceOfPlayer == 1) {
+                    dmg = player->attack1(opponent);    // Odrazu w funkcji przecwinik otrzymuje obrażenia
+                }
+                else if (choiceOfPlayer == 2){
+                    dmg = player->attack2(opponent);    // Odrazu w funkcji przecwinik otrzymuje obrażenia
+                }
+                else if (choiceOfPlayer == 3){
+                    dmg = player->attack3(opponent);    // Odrazu w funkcji przecwinik otrzymuje obrażenia
+                }
+                else if (choiceOfPlayer == 4){
+                    player->treatCharacter();
+                }
+                else if (choiceOfPlayer == 5){
+                    player->energyDrink();
+                }
+                else if (choiceOfPlayer == 6){
+                    player->manaDrink();
+                }
+                cout << "------------------------" << endl;
+                player->info();
+                cout << "------------------------" << endl;
+                opponent -> info();
+                cout << "------------------------" << endl;
+                
+                if (opponent->isDead() == true) {
+                    return 1;   // WYGRAŁ GRACZ
+                }
+                
+            
+        }
     }
 }

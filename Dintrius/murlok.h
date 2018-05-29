@@ -3,6 +3,7 @@
 #include "opponent.h"
 
 
+
 class murlok:public opponentCharacter
 {
 public:

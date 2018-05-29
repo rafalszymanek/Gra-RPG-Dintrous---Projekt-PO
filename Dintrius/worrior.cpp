@@ -61,9 +61,9 @@ int worrior::attack1(opponentCharacter* opponent){
     return 0;
 }
 
-int worrior::attack2(){
+int worrior::attack2(opponentCharacter* opponent){
     // Potezny cios
-    
+    int dmg = 0;
     if (currentEnergy >= 35) {
         srand(time( NULL ) );
         currentEnergy -= 35;
@@ -73,7 +73,10 @@ int worrior::attack2(){
             return strength * 3.7;
         }
         else{
-            return strength * (rand()%(35-20 + 1) + 20) / 10; // losuj z zakresu (nie mozemy randa  double)
+            dmg = strength * (rand()%(35-20 + 1) + 20) / 10; // losuj z zakresu (nie mozemy randa  double)
+            opponent->gainDamage(dmg);
+            return dmg;
+            
         }
     }
     else{
@@ -82,8 +85,9 @@ int worrior::attack2(){
     return 0;
 }
 
-int worrior::attack3(){
+int worrior::attack3(opponentCharacter* opponent){
     // Spirala smierci
+    int dmg = 0;
     if (currentEnergy >= 60) {
         srand(time( NULL ) );
         currentEnergy -= 60;
@@ -93,7 +97,9 @@ int worrior::attack3(){
             return strength * 4.4;
         }
         else{
-            return strength * (rand()%(42-30 + 1) + 30) / 10; // losuj z zakresu (nie mozemy randa  double)
+            dmg = strength * (rand()%(42-30 + 1) + 30) / 10; // losuj z zakresu (nie mozemy randa  double)
+            opponent->gainDamage(dmg);
+            return dmg;
         }
     }
     else{
@@ -110,7 +116,7 @@ void worrior::gainDamage(int dmg){
 // Pozostale systemy walki
 
 void worrior::treatCharacter(){
-    currentHealth += treatment * 15;
+    currentHealth += treatment * 30;
     if (currentHealth > maxHealth) {
         currentHealth = maxHealth;
     }
@@ -142,7 +148,6 @@ void worrior::info(){
 
 bool worrior::isDead(){
     if(currentHealth<=0){
-        cout << "Umarłeś!" << endl;
         return true;
     }
     else

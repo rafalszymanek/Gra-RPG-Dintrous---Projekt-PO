@@ -7,9 +7,12 @@ using namespace std;
 
 murlok::murlok(int lvl, std::string name)
 {
-    currentHealth = 120 + (30*lvl);
+    currentHealth = 50 + (30*lvl);
     strenght = 6 + (1*lvl); // UWAGA, pierwszy lvl ma 8 siły!
     mana = 0;
+}
+murlok::~murlok(){
+    
 }
 
 int murlok::attack(){
@@ -32,13 +35,10 @@ void murlok::gainDamage(int dmg){
 void murlok::info(){
     cout << "Info o przeciwniku" << endl;
     cout << currentHealth << endl;
-    cout << strenght << endl;
-    cout << mana << endl;
 }
 
 bool murlok::isDead(){
     if(currentHealth<=0){
-        cout << "Murlok nie żyje!" << endl;
         return true;
     }
     else
