@@ -140,6 +140,14 @@ void worrior::info(){
     // Wyswiet do klasy Label informacje o postaci!
 }
 
+string worrior::infoAboutClass(){
+    return this->whatClass;
+}
+
+string worrior::returnName(){
+    return this->characterName;
+}
+
 bool worrior::isDead(){
     if(currentHealth<=0){
         return true;

@@ -43,6 +43,8 @@ public:
 
     // Wyswietl info o postaci
     virtual void info() = 0;
+    virtual std::string infoAboutClass() = 0;
+    virtual std::string returnName() = 0;
     virtual bool isDead() = 0;
 
 

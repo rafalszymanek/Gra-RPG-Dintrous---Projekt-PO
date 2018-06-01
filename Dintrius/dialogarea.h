@@ -12,7 +12,7 @@ class dialogArea : public QDialog
     Q_OBJECT
 
 public:
-    explicit dialogArea(QWidget *parent = 0);
+    explicit dialogArea(QString *tab, std::string className, std::string playerName, QWidget *parent = 0);
     ~dialogArea();
 
 private slots:
@@ -20,6 +20,9 @@ private slots:
 
 private:
     Ui::dialogArea *ui;
+    QString *questionsAndAnswers;
+    std::string className;
+    std::string playerName;
 };
 
 #endif // DIALOGAREA_H
