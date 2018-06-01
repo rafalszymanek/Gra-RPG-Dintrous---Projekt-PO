@@ -1,8 +1,9 @@
 #include "playercharacter.h"
 
-playerCharacter::playerCharacter(std::string kName, int kHealth, int kEnergy, int kMana, int kStrength, int kFaith, int kTreatment)
+playerCharacter::playerCharacter(std::string kName, std::string kClass, int kStrength, int kHealth, int kEnergy, int kFaith, int kMana, int kTreatment)
 {
     characterName = kName;
+    whatClass = kClass;
     health = kHealth;
     energy = kEnergy;
     mana = kMana;

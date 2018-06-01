@@ -4,6 +4,11 @@
 #include "confirmloadgame.h"
 #include "confirmquitgame.h"
 #include "charactercreator.h"
+#include "gamecontroler.cpp"
+
+#include <iostream>
+
+using namespace std;
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -22,9 +27,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_newGame_clicked()
 {
+
     confirmNewGame alertNewGame; // Zmienna do otworznia nowego
     alertNewGame.setModal(true);
     alertNewGame.exec();
+
 }
 
 void MainWindow::on_loadGame_clicked()

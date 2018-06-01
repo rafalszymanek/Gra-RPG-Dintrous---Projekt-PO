@@ -36,7 +36,9 @@ SOURCES += \
     worrior.cpp \
     opponent.cpp \
     murlok.cpp \
-    controleroffight.cpp
+    controleroffight.cpp \
+    game.cpp \
+    gamecontroler.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -52,7 +54,9 @@ HEADERS += \
     worrior.h \
     opponent.h \
     murlok.h \
-    controleroffight.h
+    controleroffight.h \
+    game.h \
+    gamecontroler.h
 
 FORMS += \
         mainwindow.ui \

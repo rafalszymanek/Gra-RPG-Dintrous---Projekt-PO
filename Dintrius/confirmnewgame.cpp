@@ -1,6 +1,7 @@
 #include "confirmnewgame.h"
 #include "ui_confirmnewgame.h"
 #include "charactercreator.h"
+#include "gamecontroler.h"
 
 #include <QApplication>
 
@@ -20,11 +21,7 @@ confirmNewGame::~confirmNewGame()
 void confirmNewGame::on_ButtonYes_clicked()
 {
     this->close();
-    characterCreator alertNewGame; // Zmienna do otworznia nowego
-    alertNewGame.setModal(true);
-    alertNewGame.exec();
-
-
+    gameControler();
 }
 
 void confirmNewGame::on_ButtonNo_clicked()

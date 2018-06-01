@@ -7,7 +7,7 @@ class worrior:public playerCharacter
 {
 public:
     // Nie dziedziczymy po klasie abstrakcyjnej, poniewaz sa inne wartosci startowe!
-    worrior(std::string kName = "");
+    worrior(std::string kName = "", std::string whatClass = "Wojownik", int kStrength = 16, int kHealth = 14, int kEnergy = 12, int kFaith = 2, int kMana = 2, int kTreatment = 2);
     ~worrior();
 
     // Atak

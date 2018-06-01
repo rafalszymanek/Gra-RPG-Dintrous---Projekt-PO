@@ -6,16 +6,10 @@
 
 using namespace std;
 
-worrior::worrior(std::string kName)
+worrior::worrior(string kName, string kClass, int kStrength, int kHealth, int kEnergy, int kFaith, int kMana, int kTreatment)
+    :playerCharacter(kName, kClass, kStrength, kHealth, kEnergy, kFaith, kMana, kTreatment)
 {
     // przypisujemy wartosci startowe + imie
-    characterName = kName;
-    health = 14;
-    energy = 12;
-    mana = 2;
-    strength = 16;
-    faith = 2;
-    treatment = 4;
     
     maxHealth = health *20;
     maxEnergy = energy * 10;

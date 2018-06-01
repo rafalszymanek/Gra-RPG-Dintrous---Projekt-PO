@@ -9,7 +9,7 @@ class playerCharacter
 {
 protected:
     std::string characterName;
-    std::string whatClass = "";
+    std::string whatClass;
     int health;
     int energy;
     int mana;
@@ -26,7 +26,7 @@ protected:
     int maxEnergy;
     int maxMana;
 public:
-    playerCharacter(std::string kName = "", int kHealth = 0, int kEnergy = 0, int kMana = 0, int kStrength = 0, int kFaith = 0, int kTreatment = 0);
+    playerCharacter(std::string kName = "", std::string whatClass = "", int kStrength = 0, int kHealth = 0, int kEnergy = 0, int kFaith = 0, int kMana = 0, int kTreatment = 0);
     ~playerCharacter();
 
     // Atakowanie
