@@ -25,6 +25,8 @@ protected:
     int maxHealth;
     int maxEnergy;
     int maxMana;
+
+    std::string imgPath;
 public:
     playerCharacter(std::string kName = "", std::string whatClass = "", int kStrength = 0, int kHealth = 0, int kEnergy = 0, int kFaith = 0, int kMana = 0, int kTreatment = 0);
     ~playerCharacter();
@@ -43,8 +45,9 @@ public:
 
     // Wyswietl info o postaci
     virtual void info() = 0;
-    virtual std::string infoAboutClass() = 0;
+    virtual int infoAboutClass(int number) = 0;
     virtual std::string returnName() = 0;
+    virtual std::string returnImgPath() = 0;
     virtual bool isDead() = 0;
 
 

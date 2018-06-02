@@ -4,6 +4,8 @@
 #include "playercharacter.h"
 #include "charactercreator.h"
 #include "worrior.h"
+#include "opponent.h"
+#include "murlok.h"
 
 class game
 {

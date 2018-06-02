@@ -24,7 +24,8 @@ public:
 
     // Wyswietl info o postaci
     virtual void info();
-    virtual std::string infoAboutClass();
+    virtual int infoAboutClass(int number);
+    virtual std::string returnImgPath();
     virtual std::string returnName();
     virtual bool isDead();
 

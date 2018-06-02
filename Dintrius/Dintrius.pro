@@ -38,7 +38,8 @@ SOURCES += \
     murlok.cpp \
     controleroffight.cpp \
     game.cpp \
-    gamecontroler.cpp
+    gamecontroler.cpp \
+    comfirmfight.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -56,7 +57,8 @@ HEADERS += \
     murlok.h \
     controleroffight.h \
     game.h \
-    gamecontroler.h
+    gamecontroler.h \
+    comfirmfight.h
 
 FORMS += \
         mainwindow.ui \
@@ -65,7 +67,8 @@ FORMS += \
     confirmquitgame.ui \
     charactercreator.ui \
     dialogarea.ui \
-    fightarea.ui
+    fightarea.ui \
+    comfirmfight.ui
 
 RESOURCES += \
     img/images.qrc

@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="background">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -26,7 +26,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/fightbackground.jpeg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="picutreOfEnemy">
    <property name="geometry">
     <rect>
      <x>900</x>
@@ -39,7 +39,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/dialog background.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="pictureOfPlayer">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -52,7 +52,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/dialog background.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="energyLabel">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -72,7 +72,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;Energia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="manaLabel">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -92,7 +92,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;Mana&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QLabel" name="healthLabel">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -112,12 +112,12 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;Życie&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="opponentHealthLabel">
    <property name="geometry">
     <rect>
-     <x>800</x>
+     <x>830</x>
      <y>50</y>
-     <width>91</width>
+     <width>61</width>
      <height>31</height>
     </rect>
    </property>
@@ -135,12 +135,12 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;Życie&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_7">
+  <widget class="QLabel" name="currentHealthLabel">
    <property name="geometry">
     <rect>
      <x>180</x>
      <y>340</y>
-     <width>91</width>
+     <width>71</width>
      <height>31</height>
     </rect>
    </property>
@@ -155,12 +155,12 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;100%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_9">
+  <widget class="QLabel" name="currentEnergyLabel">
    <property name="geometry">
     <rect>
      <x>180</x>
      <y>390</y>
-     <width>91</width>
+     <width>71</width>
      <height>31</height>
     </rect>
    </property>
@@ -175,12 +175,12 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;100%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_10">
+  <widget class="QLabel" name="currentManaLabel">
    <property name="geometry">
     <rect>
      <x>180</x>
      <y>440</y>
-     <width>91</width>
+     <width>71</width>
      <height>31</height>
     </rect>
    </property>
@@ -195,7 +195,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;100%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="attack1Button">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -208,7 +208,7 @@
     <string>Atak 1</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="attack2Button">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -221,7 +221,7 @@
     <string>Atak 2</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="attack3Button">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -234,7 +234,7 @@
     <string>Atak 3</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="treatmentButton">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -247,7 +247,7 @@
     <string>Lecznie</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="energyDrinkButton">
    <property name="geometry">
     <rect>
      <x>330</x>
@@ -260,7 +260,7 @@
     <string>Redbull</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="manaDrinkButton">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -273,7 +273,7 @@
     <string>Niebieski napój</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="informationButton">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -286,7 +286,7 @@
     <string>Informacje</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_11">
+  <widget class="QLabel" name="fightLabel">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -306,7 +306,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;Przebieg walki&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_12">
+  <widget class="QLabel" name="background2">
    <property name="geometry">
     <rect>
      <x>260</x>
@@ -319,7 +319,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/combat dialog theme.jpg&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_13">
+  <widget class="QLabel" name="fightInformationLabel">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -339,26 +339,50 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;Zadane obrażenia&lt;/span&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <zorder>label</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_5</zorder>
-  <zorder>label_6</zorder>
-  <zorder>label_8</zorder>
-  <zorder>label_7</zorder>
-  <zorder>label_9</zorder>
-  <zorder>label_10</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>pushButton_2</zorder>
-  <zorder>pushButton_3</zorder>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_5</zorder>
-  <zorder>pushButton_6</zorder>
-  <zorder>pushButton_7</zorder>
-  <zorder>label_12</zorder>
-  <zorder>label_11</zorder>
-  <zorder>label_13</zorder>
+  <widget class="QLabel" name="currentOpponentHealth">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>50</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Avenir</family>
+     <pointsize>24</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; color:#f0f0f0;&quot;&gt;100&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <zorder>background</zorder>
+  <zorder>picutreOfEnemy</zorder>
+  <zorder>pictureOfPlayer</zorder>
+  <zorder>energyLabel</zorder>
+  <zorder>manaLabel</zorder>
+  <zorder>healthLabel</zorder>
+  <zorder>opponentHealthLabel</zorder>
+  <zorder>currentHealthLabel</zorder>
+  <zorder>currentEnergyLabel</zorder>
+  <zorder>currentManaLabel</zorder>
+  <zorder>attack1Button</zorder>
+  <zorder>attack2Button</zorder>
+  <zorder>attack3Button</zorder>
+  <zorder>treatmentButton</zorder>
+  <zorder>energyDrinkButton</zorder>
+  <zorder>manaDrinkButton</zorder>
+  <zorder>informationButton</zorder>
+  <zorder>background2</zorder>
+  <zorder>fightLabel</zorder>
+  <zorder>fightInformationLabel</zorder>
+  <zorder>currentOpponentHealth</zorder>
  </widget>
  <resources/>
  <connections/>

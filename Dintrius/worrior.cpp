@@ -18,7 +18,8 @@ worrior::worrior(string kName, string kClass, int kStrength, int kHealth, int kE
     currentHealth = maxHealth;
     currentEnergy = maxEnergy;
     currentMana = maxMana;
-    
+
+    imgPath = ":/worrior1.png";
     
     
 }
@@ -140,8 +141,42 @@ void worrior::info(){
     // Wyswiet do klasy Label informacje o postaci!
 }
 
-string worrior::infoAboutClass(){
-    return this->whatClass;
+int worrior::infoAboutClass(int number){
+    if(number == 0){
+        return this->strength;
+    }
+    else if(number == 1){
+        return this->health;
+    }
+    else if(number == 2){
+        return this->strength;
+    }
+    else if(number == 3){
+        return this->energy;
+    }
+    else if(number == 4){
+        return this->faith;
+    }
+    else if(number == 5){
+        return this->mana;
+    }
+    else if(number == 6){
+        return this->treatment;
+    }
+    else if(number == 7){
+        return this->currentHealth;
+    }
+    else if(number == 8){
+        return this->currentEnergy;
+    }
+    else if(number == 9){
+        return this->currentMana;
+    }
+    return 0;
+}
+
+string worrior::returnImgPath(){
+    return this->imgPath;
 }
 
 string worrior::returnName(){

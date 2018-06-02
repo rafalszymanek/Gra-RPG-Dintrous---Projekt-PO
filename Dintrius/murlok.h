@@ -11,7 +11,8 @@ public:
     ~murlok();
     virtual int attack();
     virtual void gainDamage(int dmg);
-    virtual void info();
+    virtual std::string returnImgPath();
+    virtual int info(int number);
     virtual bool isDead();
     
 };

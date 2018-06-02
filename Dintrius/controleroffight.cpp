@@ -5,7 +5,7 @@
 
 using namespace std;
 /*
-    Funkcja - Menu wyboru, którego ataku chce użyć gracz. (Niepotrzebne w graficznym)
+    Funkcja - Menu wyboru, którego ataku chce użyć gracz. (Niepotrzebne w graficznym)
  */
 int whichAttackOfPlayer(){
     int choiceOfPlayer;
@@ -103,11 +103,11 @@ int controlerOfFight::fight(){
             opponentDmg = opponent->attack();
             player->gainDamage(opponentDmg);    // Gracz nie otrzymuje obrażeń w funkcji. Trzeba użyc osobnej funkcji
             
-            cout << "------------------------" << endl;
-            player->info();
-            cout << "------------------------" << endl;
-            opponent -> info();
-            cout << "------------------------" << endl;
+//            cout << "------------------------" << endl;
+//            player->info();
+//            cout << "------------------------" << endl;
+//            opponent -> info();
+//            cout << "------------------------" << endl;
             if (player->isDead() == true) {
                 return 0;   // WYGRAŁ PRZECIWNIK
             }
@@ -146,11 +146,11 @@ int controlerOfFight::fight(){
                 else if (choiceOfPlayer == 6){
                     player->manaDrink();
                 }
-                cout << "------------------------" << endl;
-                player->info();
-                cout << "------------------------" << endl;
-                opponent -> info();
-                cout << "------------------------" << endl;
+//                cout << "------------------------" << endl;
+//                player->info();
+//                cout << "------------------------" << endl;
+//                opponent -> info();
+//                cout << "------------------------" << endl;
                 
                 if (opponent->isDead() == true) {
                     return 1;   // WYGRAŁ GRACZ

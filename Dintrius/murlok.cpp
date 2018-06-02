@@ -10,6 +10,7 @@ murlok::murlok(int lvl, std::string name)
     currentHealth = 50 + (30*lvl);
     strenght = 6 + (1*lvl); // UWAGA, pierwszy lvl ma 8 siły!
     mana = 0;
+    imgPath = ":/murloc.png";
 }
 murlok::~murlok(){
     
@@ -32,9 +33,14 @@ void murlok::gainDamage(int dmg){
     this->isDead();
 }
 
-void murlok::info(){
-    cout << "Info o przeciwniku" << endl;
-    cout << currentHealth << endl;
+string murlok::returnImgPath(){
+    return imgPath;
+}
+
+int murlok::info(int number){
+    if(number==1)
+        return this->currentHealth;
+    return -5423;
 }
 
 bool murlok::isDead(){
