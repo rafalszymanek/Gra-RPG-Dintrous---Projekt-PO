@@ -39,7 +39,8 @@ SOURCES += \
     controleroffight.cpp \
     game.cpp \
     gamecontroler.cpp \
-    comfirmfight.cpp
+    theend.cpp \
+    textpluscontiuedialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -58,7 +59,8 @@ HEADERS += \
     controleroffight.h \
     game.h \
     gamecontroler.h \
-    comfirmfight.h
+    theend.h \
+    textpluscontiuedialog.h
 
 FORMS += \
         mainwindow.ui \
@@ -68,7 +70,8 @@ FORMS += \
     charactercreator.ui \
     dialogarea.ui \
     fightarea.ui \
-    comfirmfight.ui
+    theend.ui \
+    textpluscontiuedialog.ui
 
 RESOURCES += \
     img/images.qrc

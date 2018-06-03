@@ -8,7 +8,7 @@ using namespace std;
 murlok::murlok(int lvl, std::string name)
 {
     currentHealth = 50 + (30*lvl);
-    strenght = 6 + (1*lvl); // UWAGA, pierwszy lvl ma 8 siły!
+    strenght = 7 + (1*lvl); // UWAGA, pierwszy lvl ma 8 siły!
     mana = 0;
     imgPath = ":/murloc.png";
 }

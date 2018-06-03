@@ -18,3 +18,13 @@ void confirmQuitGame::on_ButtonYes_clicked()
     this->close();
     QCoreApplication::quit();
 }
+
+void confirmQuitGame::on_ButtonNo_clicked()
+{
+    this->close();
+}
+
+void confirmQuitGame::on_ButtonCancel_clicked()
+{
+    this->close();
+}

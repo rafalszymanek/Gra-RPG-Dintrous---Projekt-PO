@@ -1,20 +1,19 @@
 #include "dialogarea.h"
 #include "ui_dialogarea.h"
 #include "fightarea.h"
-#include "comfirmfight.h"
 
 
 
-dialogArea::dialogArea(QString *tab, std::string kClassName, std::string kPlayerName, std::string kOpponentName, int kNumberToStartFight, QString pathToImgOpponent, std::string pathToImgPlayer, QWidget *parent) :
+
+dialogArea::dialogArea(QString *tab, std::string kPlayerName, std::string kOpponentName, int kNumberToStartAction, QString pathToImgOpponent, std::string pathToImgPlayer, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::dialogArea)
 {
     ui->setupUi(this);
     questionsAndAnswers = tab;
-    className = kClassName;
     playerName = kPlayerName;
     opponentName = kOpponentName;
-    numberToStartFight = kNumberToStartFight;
+    numberToStartAction = kNumberToStartAction;
     imageOfOpponent = pathToImgOpponent;
     imageOfPlayer = QString::fromStdString(pathToImgPlayer);
 
@@ -61,8 +60,8 @@ void dialogArea::on_choose1Button_clicked()
 
     ui->dialogAILabel->setText(questionsAndAnswers[4]);
     int buttonNumber = 1;
-    if(buttonNumber == numberToStartFight){
-        comfirmFight alertFight(questionsAndAnswers[buttonNumber+3]); // Zmienna do otworznia nowego
+    if(buttonNumber == numberToStartAction){
+        textPlusContiueDialog alertFight(questionsAndAnswers[buttonNumber+3]); // Zmienna do otworznia nowego
         alertFight.setModal(true);
         alertFight.exec();
         this->close();
@@ -75,8 +74,8 @@ void dialogArea::on_choose2Button_clicked()
     int buttonNumber = 2;
     ui->dialogAILabel->setText(questionsAndAnswers[5]);
 
-    if(buttonNumber == numberToStartFight){
-        comfirmFight alertFight(questionsAndAnswers[buttonNumber+3]); // Zmienna do otworznia nowego
+    if(buttonNumber == numberToStartAction){
+        textPlusContiueDialog alertFight(questionsAndAnswers[buttonNumber+3]); // Zmienna do otworznia nowego
         alertFight.setModal(true);
         alertFight.exec();
         this->close();
@@ -88,8 +87,8 @@ void dialogArea::on_choose3Button_clicked()
     int buttonNumber = 3;
     ui->dialogAILabel->setText(questionsAndAnswers[6]);
 
-    if(buttonNumber == numberToStartFight){
-        comfirmFight alertFight(questionsAndAnswers[buttonNumber+3]); // Zmienna do otworznia nowego
+    if(buttonNumber == numberToStartAction){
+        textPlusContiueDialog alertFight(questionsAndAnswers[buttonNumber+3]); // Zmienna do otworznia nowego
         alertFight.setModal(true);
         alertFight.exec();
         this->close();

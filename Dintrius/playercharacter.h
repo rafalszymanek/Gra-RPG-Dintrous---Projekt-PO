@@ -50,6 +50,13 @@ public:
     virtual std::string returnImgPath() = 0;
     virtual bool isDead() = 0;
 
+    virtual std::string whatAClass() = 0;
+    virtual void afterFight()= 0;
+
+    virtual bool eneughAttack1() = 0;
+    virtual bool eneughAttack2() = 0;
+    virtual bool eneughAttack3() = 0;
+
 
 };
 

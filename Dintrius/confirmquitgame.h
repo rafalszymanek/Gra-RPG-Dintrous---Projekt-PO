@@ -18,6 +18,10 @@ public:
 private slots:
     void on_ButtonYes_clicked();
 
+    void on_ButtonNo_clicked();
+
+    void on_ButtonCancel_clicked();
+
 private:
     Ui::confirmQuitGame *ui;
 };

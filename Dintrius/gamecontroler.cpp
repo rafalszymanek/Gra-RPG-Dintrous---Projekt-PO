@@ -11,6 +11,7 @@
 #include "game.h"
 #include "gamecontroler.h"
 #include "worrior.h"
+#include "theend.h"
 
 using namespace std;
 
@@ -20,7 +21,15 @@ void gameControler(){
 
     game* newGame = new game(0);
     newGame->createCharacter();
-    newGame->history1();
+    if(newGame->history1()){
+
+    }
+
+
+    delete newGame;
+    theEnd endOfGame;
+    endOfGame.setModal(true);
+    endOfGame.exec();
 }
 
 

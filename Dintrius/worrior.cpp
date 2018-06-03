@@ -19,13 +19,31 @@ worrior::worrior(string kName, string kClass, int kStrength, int kHealth, int kE
     currentEnergy = maxEnergy;
     currentMana = maxMana;
 
+    whatClass = "worrior";
     imgPath = ":/worrior1.png";
     
     
 }
 
 worrior::~worrior(){
+    characterName = "";
+    health = 0;
+    energy = 0;
+    mana = 0;
+    strength = 0;
+    faith = 0;
+    treatment = 0;
 
+    maxHealth = 0;
+    maxEnergy = 0;;
+    maxMana = 0;
+
+    currentHealth = 0;
+    currentEnergy = 0;
+    currentMana = 0;
+
+    whatClass = "";
+    imgPath = "";
 }
 
 // System walki znajduje sie w arkuszu
@@ -35,9 +53,9 @@ int worrior::attack1(opponentCharacter* opponent){
     // Atak mieczem
     int dmg = 0;
     
-    if (currentEnergy >= 15) {
+    if (currentEnergy >= 25) {
         srand(time( NULL ) );
-        currentEnergy -= 15;
+        currentEnergy -= 25;
         int critick = rand() % 12 + 1;
         if(critick == 12){
             dmg = strength * 3.5;
@@ -92,7 +110,7 @@ int worrior::attack3(opponentCharacter* opponent){
             return strength * 4.4;
         }
         else{
-            dmg = strength * (rand()%(42-30 + 1) + 30) / 10; // losuj z zakresu (nie mozemy randa  double)
+            dmg = strength * (rand()%(42-40 + 1) + 40) / 10; // losuj z zakresu (nie mozemy randa  double)
             opponent->gainDamage(dmg);
             return dmg;
         }
@@ -189,4 +207,34 @@ bool worrior::isDead(){
     }
     else
         return false;
+}
+
+bool worrior::eneughAttack1(){
+    if(currentEnergy>=25)
+        return true;
+    else
+        return false;
+}
+bool worrior::eneughAttack2(){
+    if(currentEnergy>=35)
+        return true;
+    else
+        return false;
+}
+bool worrior::eneughAttack3(){
+    if(currentEnergy>=60)
+        return true;
+    else
+        return false;
+}
+
+string worrior::whatAClass(){
+    return whatClass;
+}
+
+void worrior::afterFight(){
+    currentHealth = maxHealth;
+    currentEnergy = maxEnergy;
+    currentMana = maxMana;
+
 }

@@ -2,6 +2,7 @@
 #define DIALOGAREA_H
 
 #include <QDialog>
+#include "textpluscontiuedialog.h"
 
 namespace Ui {
 class dialogArea;
@@ -12,8 +13,8 @@ class dialogArea : public QDialog
     Q_OBJECT
 
 public:
-    explicit dialogArea(QString *tab, std::string className, std::string playerName,
-                        std::string opponentName, int numberToStartFight, QString pathToImgOpponent, std::string pathToImgPlayer
+    explicit dialogArea(QString *tab, std::string playerName,
+                        std::string opponentName, int numberToStartAction, QString pathToImgOpponent, std::string pathToImgPlayer
                         , QWidget *parent = 0);
     ~dialogArea();
 
@@ -30,7 +31,7 @@ private:
     std::string className;
     std::string playerName;
     std::string opponentName;
-    int numberToStartFight;
+    int numberToStartAction;
     QString imageOfOpponent;
     QString imageOfPlayer;
 };

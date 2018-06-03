@@ -23,7 +23,7 @@ void characterCreator::whichColorOfPoints(int points){
         goodPointsLeft();
 }
 
-characterCreator::characterCreator(int liczba, QWidget *parent) :
+characterCreator::characterCreator(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::characterCreator)
 {
@@ -85,6 +85,14 @@ void characterCreator::on_classBox_currentIndexChanged(const QString &arg1)
 {
     if(arg1 == "Wojownik"){
         ui->descriptionLabel->setText("<p><span style=' text-decoration: underline; color:#dedede;'>Wojownik</span><span style=' color:#dedede;'><br/>Charakteryzuje się siłą oraz dużą ilością życia.<br/>Jego minusem jest:<br/>- niskie własności lecznicze<br/>- brak umiejętności magicznych</span></p><p><span style=' color:#dedede;'>Jego ataki to:<br/>- atak mieczem<br/>- potężny cios<br/>- spirala śmierci</span></p>");
+
+        ui->strengthBox->setRange(16,100);
+        ui->vitalBox->setRange(14,100);
+        ui->energyBox->setRange(12,100);
+        ui->faithBox->setRange(2,100);
+        ui->manaBox->setRange(2,100);
+        ui->treatmentBox->setRange(4, 100);
+
         ui->strengthBox->setValue(16);
         ui->vitalBox->setValue(14);
         ui->energyBox->setValue(12);
@@ -95,15 +103,35 @@ void characterCreator::on_classBox_currentIndexChanged(const QString &arg1)
     }
     else if(arg1 == "Mag"){
         ui->descriptionLabel->setText("<p><span style=' text-decoration: underline; color:#dedede;'>Mag</span><span style=' color:#dedede;'><br/>Magiczna postać, zadająca ogromne obrażenia za<br/>pomocą magii. Do tego dochodzą<br/>ponadprzeciętne umiejętności lecznicze.<br/> <br/>Jego minusem jest:<br/>- niska siła<br/>- mało życia</span></p><p><span style=' color:#dedede;'>Jego ataki to:<br/>- atak laską<br/>- czara<br/>- kula ognia</span></p>");
+
+        ui->strengthBox->setRange(3,100);
+        ui->vitalBox->setRange(7,100);
+        ui->energyBox->setRange(5,100);
+        ui->faithBox->setRange(13,100);
+        ui->manaBox->setRange(12,100);
+        ui->treatmentBox->setRange(10,100);
+
         ui->strengthBox->setValue(3);
         ui->vitalBox->setValue(7);
         ui->energyBox->setValue(5);
         ui->faithBox->setValue(13);
         ui->manaBox->setValue(12);
         ui->treatmentBox->setValue(10);
+
+
+
+
     }
     else if(arg1 == "Paladyn"){
         ui->descriptionLabel->setText("<p><span style=' text-decoration: underline; color:#dedede;'>Paladyn</span><span style=' color:#dedede;'><br/>Połączenie wojownika z magiem. Jest zarówno<br/>silny jaki posiada umiejętności lecznicze,<br/> a także włada magią<br/><br/>Jego minusem jest:<br/>- zrównoważenie wszystkich cech</span></p><p><span style=' color:#dedede;'>Jego ataki to:<br/>- atak mieczem<br/>- potężny cios<br/>- świetlisty cios</span></p>");
+
+        ui->strengthBox->setRange(11,100);
+        ui->vitalBox->setRange(11,100);
+        ui->energyBox->setRange(9,100);
+        ui->faithBox->setRange(5,100);
+        ui->manaBox->setRange(7,100);
+        ui->treatmentBox->setRange(7, 100);
+
         ui->strengthBox->setValue(11);
         ui->vitalBox->setValue(11);
         ui->energyBox->setValue(9);
@@ -113,6 +141,14 @@ void characterCreator::on_classBox_currentIndexChanged(const QString &arg1)
     }
     else if(arg1 == ""){
         ui->descriptionLabel->setText("");
+
+        ui->strengthBox->setRange(0, 100);
+        ui->vitalBox->setRange(0, 100);
+        ui->energyBox->setRange(0, 100);
+        ui->faithBox->setRange(0, 100);
+        ui->manaBox->setRange(0, 100);
+        ui->treatmentBox->setRange(0, 100);
+
         ui->strengthBox->setValue(0);
         ui->vitalBox->setValue(0);
         ui->energyBox->setValue(0);

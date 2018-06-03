@@ -29,6 +29,13 @@ public:
     virtual std::string returnName();
     virtual bool isDead();
 
+    virtual std::string whatAClass();
+    virtual void afterFight();
+
+    virtual bool eneughAttack1();
+    virtual bool eneughAttack2();
+    virtual bool eneughAttack3();
+
 };
 
 #endif // WORRIOR_H

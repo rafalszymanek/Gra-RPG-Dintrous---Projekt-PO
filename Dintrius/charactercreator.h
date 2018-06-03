@@ -12,7 +12,7 @@ class characterCreator : public QDialog
     Q_OBJECT
 
 public:
-    explicit characterCreator(int liczba = 0 ,QWidget *parent = 0);
+    explicit characterCreator(QWidget *parent = 0);
     ~characterCreator();
     std::string getCharacterName();
     std::string getClassName();

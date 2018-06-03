@@ -17,7 +17,7 @@ public:
     ~game();
 
     void createCharacter();
-    void history1();
+    bool history1();
 
 
 };
