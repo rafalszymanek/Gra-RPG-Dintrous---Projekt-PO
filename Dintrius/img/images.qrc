@@ -8,5 +8,11 @@
         <file>combat dialog theme.jpg</file>
         <file>worrior1.png</file>
         <file>murloc.png</file>
+        <file>mag.png</file>
+        <file>paladyn.png</file>
+        <file>nieznajoma1.png</file>
+        <file>guard.png</file>
+        <file>bear.png</file>
+        <file>bear3.png</file>
     </qresource>
 </RCC>

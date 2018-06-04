@@ -11,6 +11,7 @@
 #include "game.h"
 #include "gamecontroler.h"
 #include "worrior.h"
+#include "textpluscontiuedialog.h"
 #include "theend.h"
 
 using namespace std;
@@ -21,8 +22,16 @@ void gameControler(){
 
     game* newGame = new game(0);
     newGame->createCharacter();
+    textPlusContiueDialog* alert = new textPlusContiueDialog("Rodział pierwszy - Wprowadzenie");
+    alert->setModal(true);
+    alert->exec();
+    delete alert;
     if(newGame->history1()){
-
+        textPlusContiueDialog* alert = new textPlusContiueDialog("Rodział drugi - O co chodzi?");
+        alert->setModal(true);
+        alert->exec();
+        delete alert;
+        newGame->history2();
     }
 
 

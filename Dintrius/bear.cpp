@@ -1,26 +1,26 @@
-#include "murlok.h"
+#include "bear.h"
 
 #include <ctime>
 #include <iostream>
 
 using namespace std;
 
-murlok::murlok(int lvl, std::string name)
+bear::bear(int lvl, std::string imagePath)
 {
     currentHealth = 50 + (30*lvl);
     strenght = 7 + (1*lvl); // UWAGA, pierwszy lvl ma 8 siły!
     mana = 0;
-    imgPath = ":/murloc.png";
+    imgPath = imagePath;
 }
-murlok::~murlok(){
-    
+bear::~bear(){
+
 }
 
-int murlok::attack(){
+int bear::attack(){
     srand(time( NULL ) );
     int critick = rand() % 12 + 1;
     if(critick == 12){
-        
+
         return strenght * 3.5;
     }
     else{
@@ -28,28 +28,28 @@ int murlok::attack(){
     }
 }
 
-void murlok::gainDamage(int dmg){
+void bear::gainDamage(int dmg){
     currentHealth -= dmg;
     this->isDead();
 }
 
-string murlok::returnImgPath(){
+string bear::returnImgPath(){
     return imgPath;
 }
 
-int murlok::info(int number){
+int bear::info(int number){
     if(number==1)
         return this->currentHealth;
     return -5423;
 }
 
-bool murlok::isDead(){
+bool bear::isDead(){
     if(currentHealth<=0){
         return true;
     }
     else
         return false;}
 
-void murlok::operator=(playerCharacter *player){
+void bear::operator=(playerCharacter *player){
     this->strenght = player->infoAboutClass(1);
 }

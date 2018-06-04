@@ -1,14 +1,16 @@
-#ifndef WORRIOR_H
-#define WORRIOR_H
+#ifndef PALADYN_H
+#define PALADYN_H
+
+
 #include "playercharacter.h"
 #include "opponent.h"
 
-class worrior:public playerCharacter
+class paladyn:public playerCharacter
 {
 public:
     // Nie dziedziczymy po klasie abstrakcyjnej, poniewaz sa inne wartosci startowe!
-    worrior(std::string kName = "", int kStrength = 16, int kHealth = 14, int kEnergy = 12, int kFaith = 2, int kMana = 2, int kTreatment = 2);
-    ~worrior();
+    paladyn(std::string kName = "", int kStrength = 11, int kHealth = 11, int kEnergy = 9, int kFaith = 5, int kMana = 7, int kTreatment = 7);
+    ~paladyn();
 
     // Atak
     virtual int attack1(opponentCharacter* opponent);
@@ -45,4 +47,5 @@ public:
 
 };
 
-#endif // WORRIOR_H
+
+#endif // PALADYN_H

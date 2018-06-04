@@ -36,11 +36,13 @@ SOURCES += \
     worrior.cpp \
     opponent.cpp \
     murlok.cpp \
-    controleroffight.cpp \
     game.cpp \
     gamecontroler.cpp \
     theend.cpp \
-    textpluscontiuedialog.cpp
+    textpluscontiuedialog.cpp \
+    mag.cpp \
+    paladyn.cpp \
+    bear.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -56,11 +58,13 @@ HEADERS += \
     worrior.h \
     opponent.h \
     murlok.h \
-    controleroffight.h \
     game.h \
     gamecontroler.h \
     theend.h \
-    textpluscontiuedialog.h
+    textpluscontiuedialog.h \
+    mag.h \
+    paladyn.h \
+    bear.h
 
 FORMS += \
         mainwindow.ui \

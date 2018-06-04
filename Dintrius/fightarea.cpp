@@ -159,22 +159,49 @@ void fightArea::on_manaDrinkButton_clicked()
 
 void fightArea::on_informationButton_clicked()
 {
+    QString text;
     if(player->whatAClass()=="worrior"){
-        QString text = "Wojownik <br/> 1. Atak mieczem (siła*(1.5 - 3) 25 energii <br/>"
+        text = "Wojownik <br/> 1. Atak mieczem (siła*(1.5 - 3) 25 energii <br/>"
                        "2. Potężny cios (siła*(2 - 3.5) 35 energii <br/>"
                        "3. Spirala śmierci (siła*(4 - 4.2) 60 energii <br/>"
-                       "3. Leczenie (życie + leczenie*30) <br/>"
+                       "4. Leczenie (życie + leczenie*30) <br/>"
                        "Siła:" + QString::number(player->infoAboutClass(2)) + "<br/>"+
                        "Życie:" + QString::number(player->infoAboutClass(1)) + "<br/>"+
                        "Energia:" + QString::number(player->infoAboutClass(3)) + "<br/>" +
                        "Wiara:" + QString::number(player->infoAboutClass(4)) + "<br/>" +
                        "Mana:" + QString::number(player->infoAboutClass(5)) + "<br/>" +
                        "Lecznictwo:" + QString::number(player->infoAboutClass(6)) + "<br/>";
+    }
+     else if(player->whatAClass()=="mag"){
+            text = "Mag <br/> 1. Atak laską (siła*(1.5 - 3) 10 energii <br/>"
+                           "2. Czara (siła*(2 - 3.5) 30 many <br/>"
+                           "3. Kula ognia (siła*(4 - 4.2) 60 many <br/>"
+                           "4. Leczenie (życie + leczenie*30) <br/>"
+                           "Siła:" + QString::number(player->infoAboutClass(2)) + "<br/>"+
+                           "Życie:" + QString::number(player->infoAboutClass(1)) + "<br/>"+
+                           "Energia:" + QString::number(player->infoAboutClass(3)) + "<br/>" +
+                           "Wiara:" + QString::number(player->infoAboutClass(4)) + "<br/>" +
+                           "Mana:" + QString::number(player->infoAboutClass(5)) + "<br/>" +
+                           "Lecznictwo:" + QString::number(player->infoAboutClass(6)) + "<br/>";
+    }
+    else if(player->whatAClass()=="paladyn"){
+           text = "Paladyn <br/> 1. Atak mieczem (siła*(1.5 - 3) 15 energii <br/>"
+                          "2. Potężny cios (siła*(2 - 3.5) 40 energii <br/>"
+                          "3. Świetlisty cios (siła*(4.6 - 5) 50 many <br/>"
+                          "4. Leczenie (życie + leczenie*30) <br/>"
+                          "Siła:" + QString::number(player->infoAboutClass(2)) + "<br/>"+
+                          "Życie:" + QString::number(player->infoAboutClass(1)) + "<br/>"+
+                          "Energia:" + QString::number(player->infoAboutClass(3)) + "<br/>" +
+                          "Wiara:" + QString::number(player->infoAboutClass(4)) + "<br/>" +
+                          "Mana:" + QString::number(player->infoAboutClass(5)) + "<br/>" +
+                          "Lecznictwo:" + QString::number(player->infoAboutClass(6)) + "<br/>";
+   }
+
 
         textPlusContiueDialog dialog(text);
         dialog.setModal(true);
         dialog.exec();
-    }
+
 }
 
 bool fightArea::didWon(){

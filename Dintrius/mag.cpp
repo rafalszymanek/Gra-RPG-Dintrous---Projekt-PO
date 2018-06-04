@@ -1,25 +1,24 @@
 #include <ctime>
 #include <iostream>
 
-#include "worrior.h"
+#include "mag.h"
 #include "opponent.h"
 
 using namespace std;
 
-worrior::worrior(string kName, int kStrength, int kHealth, int kEnergy, int kFaith, int kMana, int kTreatment)
+mag::mag(string kName, int kStrength, int kHealth, int kEnergy, int kFaith, int kMana, int kTreatment)
     :playerCharacter(kName, kStrength, kHealth, kEnergy, kFaith, kMana, kTreatment)
 {
     // przypisujemy wartosci startowe + imie
-    
+
     setMaxValues();
 
-    whatClass = "worrior";
-    imgPath = ":/worrior1.png";
-    
-    
+    whatClass = "mag";
+    imgPath = ":/mag.png";
+
 }
 
-worrior::~worrior(){
+mag::~mag(){
     characterName = "";
     health = 0;
     energy = 0;
@@ -43,13 +42,13 @@ worrior::~worrior(){
 // System walki znajduje sie w arkuszu
 // Ataki
 
-int worrior::attack1(opponentCharacter* opponent){
+int mag::attack1(opponentCharacter* opponent){
     // Atak mieczem
     int dmg = 0;
-    
-    if (currentEnergy >= 25) {
+
+    if (currentEnergy >= 10) {
         srand(time( NULL ) );
-        currentEnergy -= 25;
+        currentEnergy -= 10;
         int critick = rand() % 12 + 1;
         if(critick == 12){
             dmg = strength * 3.5;
@@ -68,22 +67,22 @@ int worrior::attack1(opponentCharacter* opponent){
     return 0;
 }
 
-int worrior::attack2(opponentCharacter* opponent){
+int mag::attack2(opponentCharacter* opponent){
     // Potezny cios
     int dmg = 0;
-    if (currentEnergy >= 35) {
+    if (currentMana >= 30) {
         srand(time( NULL ) );
-        currentEnergy -= 35;
+        currentMana -= 30;
         int critick = rand() % 12 + 1;
         if(critick == 6){ // polowa (jeden z 12)
             cout << "Critick!" <<endl;
-            return strength * 3.7;
+            return faith * 3.7;
         }
         else{
-            dmg = strength * (rand()%(35-20 + 1) + 20) / 10; // losuj z zakresu (nie mozemy randa  double)
+            dmg = faith * (rand()%(35-20 + 1) + 20) / 10; // losuj z zakresu (nie mozemy randa  double)
             opponent->gainDamage(dmg);
             return dmg;
-            
+
         }
     }
     else{
@@ -92,19 +91,19 @@ int worrior::attack2(opponentCharacter* opponent){
     return 0;
 }
 
-int worrior::attack3(opponentCharacter* opponent){
+int mag::attack3(opponentCharacter* opponent){
     // Spirala smierci
     int dmg = 0;
-    if (currentEnergy >= 60) {
+    if (currentMana >= 60) {
         srand(time( NULL ) );
-        currentEnergy -= 60;
+        currentMana -= 60;
         int critick = rand() % 20 + 1;
         if(critick == 10){
             cout << "Critick!" <<endl;
-            return strength * 4.4;
+            return faith * 4.4;
         }
         else{
-            dmg = strength * (rand()%(42-40 + 1) + 40) / 10; // losuj z zakresu (nie mozemy randa  double)
+            dmg = faith * (rand()%(42-40 + 1) + 40) / 10; // losuj z zakresu (nie mozemy randa  double)
             opponent->gainDamage(dmg);
             return dmg;
         }
@@ -115,28 +114,28 @@ int worrior::attack3(opponentCharacter* opponent){
     return 0;
 }
 
-void worrior::gainDamage(int dmg){
+void mag::gainDamage(int dmg){
     currentHealth -= dmg;
     this->isDead();
 }
 //
 // Pozostale systemy walki
 
-void worrior::treatCharacter(){
+void mag::treatCharacter(){
     currentHealth += treatment * 30;
     if (currentHealth > maxHealth) {
         currentHealth = maxHealth;
     }
 }
 
-void worrior::energyDrink(){
+void mag::energyDrink(){
     currentEnergy += 60;
     if (currentEnergy > maxEnergy) {
         currentEnergy = maxEnergy;
     }
 }
 
-void worrior::manaDrink(){
+void mag::manaDrink(){
     currentMana += 60;
     if (currentMana > maxMana) {
         currentMana = maxMana;
@@ -144,7 +143,7 @@ void worrior::manaDrink(){
 }
 
 // Wyswietl info o postaci
-void worrior::info(){
+void mag::info(){
     cout << "Informacje o postaci"<< endl;
     cout << characterName << endl;
     cout << currentHealth<< endl;
@@ -153,7 +152,7 @@ void worrior::info(){
     // Wyswiet do klasy Label informacje o postaci!
 }
 
-int worrior::infoAboutClass(int number){
+int mag::infoAboutClass(int number){
     if(number == 0){
         return this->strength;
     }
@@ -187,15 +186,15 @@ int worrior::infoAboutClass(int number){
     return 0;
 }
 
-string worrior::returnImgPath(){
+string mag::returnImgPath(){
     return this->imgPath;
 }
 
-string worrior::returnName(){
+string mag::returnName(){
     return this->characterName;
 }
 
-bool worrior::isDead(){
+bool mag::isDead(){
     if(currentHealth<=0){
         return true;
     }
@@ -203,41 +202,42 @@ bool worrior::isDead(){
         return false;
 }
 
-bool worrior::eneughAttack1(){
-    if(currentEnergy>=25)
+bool mag::eneughAttack1(){
+    if(currentEnergy>=10)
         return true;
     else
         return false;
 }
-bool worrior::eneughAttack2(){
-    if(currentEnergy>=35)
+bool mag::eneughAttack2(){
+    if(currentMana>=30)
         return true;
     else
         return false;
 }
-bool worrior::eneughAttack3(){
-    if(currentEnergy>=60)
+bool mag::eneughAttack3(){
+    if(currentMana>=60)
         return true;
     else
         return false;
 }
 
-string worrior::whatAClass(){
+string mag::whatAClass(){
     return whatClass;
 }
 
-void worrior::afterFight(){
+void mag::afterFight(){
     currentHealth = maxHealth;
     currentEnergy = maxEnergy;
     currentMana = maxMana;
 
 }
 
-void worrior::setMaxValues(){
+void mag::setMaxValues(){
     maxHealth = health *20;
     maxEnergy = energy * 10;
     maxMana = mana * 20;
-    
+
+    // Uzupełnij aktualne dane do nowych wartości maxymalnych
     afterFight();
 }
 

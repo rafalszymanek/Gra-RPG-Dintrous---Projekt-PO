@@ -4,8 +4,11 @@
 #include "playercharacter.h"
 #include "charactercreator.h"
 #include "worrior.h"
+#include "mag.h"
+#include "paladyn.h"
 #include "opponent.h"
 #include "murlok.h"
+#include "bear.h"
 
 class game
 {
@@ -18,6 +21,7 @@ public:
 
     void createCharacter();
     bool history1();
+    bool history2();
 
 
 };

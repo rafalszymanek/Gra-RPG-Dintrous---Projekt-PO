@@ -37,10 +37,7 @@ characterCreator::~characterCreator()
 
 void characterCreator::on_approveButton_clicked()
 {
-//    dialogArea newArea; // Zmienna do otworznia nowego
-//    newArea.setModal(true);
-//    newArea.exec();
-    if(ui->getNameLineEdit->text()!=""  && ui->classBox->currentText()!="" && points == 0)
+    if(ui->getNameLineEdit->text()!=""  && ui->classBox->currentText()!="" && points == 0) // Muszą być wszystkie argumenty spełnione
     {
         this->close();
     }

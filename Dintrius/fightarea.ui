@@ -263,7 +263,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Redbull</string>
+    <string>Zielony napój</string>
    </property>
   </widget>
   <widget class="QPushButton" name="manaDrinkButton">

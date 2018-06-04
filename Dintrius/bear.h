@@ -1,16 +1,16 @@
-#ifndef MURLOK_H
-#define MURLOK_H
+#ifndef BEAR_H
+#define BEAR_H
 #include "opponent.h"
 #include "playercharacter.h"
 #include "worrior.h"
 
 
 
-class murlok:public opponentCharacter
+class bear:public opponentCharacter
 {
 public:
-    murlok(int lvl = 1, std::string name = "Murlok");
-    ~murlok();
+    bear(int lvl = 1, std::string imagePath = ":/bear.png");
+    ~bear();
 
     // Atakowanie
     virtual int attack();
@@ -22,11 +22,10 @@ public:
     virtual std::string returnImgPath();
     virtual int info(int number);
 
-    
-    // Przeciążanie operatora =
-    // Przypisuje siłę bohatera do siły murloka
-    void operator=(playerCharacter *player);
-    
-};
 
-#endif // MURLOK_H
+    // Przeciążanie operatora =
+    // Przypisuje siłę bohatera do siły beara
+    void operator=(playerCharacter *player);
+
+};
+#endif // BEAR_H

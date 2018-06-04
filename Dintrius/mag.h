@@ -1,14 +1,14 @@
-#ifndef WORRIOR_H
-#define WORRIOR_H
+#ifndef MAG_H
+#define MAG_H
 #include "playercharacter.h"
 #include "opponent.h"
 
-class worrior:public playerCharacter
+class mag:public playerCharacter
 {
 public:
     // Nie dziedziczymy po klasie abstrakcyjnej, poniewaz sa inne wartosci startowe!
-    worrior(std::string kName = "", int kStrength = 16, int kHealth = 14, int kEnergy = 12, int kFaith = 2, int kMana = 2, int kTreatment = 2);
-    ~worrior();
+    mag(std::string kName = "", int kStrength = 3, int kHealth = 7, int kEnergy = 5, int kFaith = 13, int kMana = 12, int kTreatment = 10);
+    ~mag();
 
     // Atak
     virtual int attack1(opponentCharacter* opponent);
@@ -44,5 +44,4 @@ public:
     virtual bool eneughAttack3();
 
 };
-
-#endif // WORRIOR_H
+#endif // MAG_H

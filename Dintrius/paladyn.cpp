@@ -1,25 +1,25 @@
 #include <ctime>
 #include <iostream>
 
-#include "worrior.h"
+#include "paladyn.h"
 #include "opponent.h"
 
 using namespace std;
 
-worrior::worrior(string kName, int kStrength, int kHealth, int kEnergy, int kFaith, int kMana, int kTreatment)
+paladyn::paladyn(string kName, int kStrength, int kHealth, int kEnergy, int kFaith, int kMana, int kTreatment)
     :playerCharacter(kName, kStrength, kHealth, kEnergy, kFaith, kMana, kTreatment)
 {
     // przypisujemy wartosci startowe + imie
-    
+
     setMaxValues();
 
-    whatClass = "worrior";
-    imgPath = ":/worrior1.png";
-    
-    
+    whatClass = "paladyn";
+    imgPath = ":/paladyn.png";
+
+
 }
 
-worrior::~worrior(){
+paladyn::~paladyn(){
     characterName = "";
     health = 0;
     energy = 0;
@@ -43,13 +43,13 @@ worrior::~worrior(){
 // System walki znajduje sie w arkuszu
 // Ataki
 
-int worrior::attack1(opponentCharacter* opponent){
+int paladyn::attack1(opponentCharacter* opponent){
     // Atak mieczem
     int dmg = 0;
-    
-    if (currentEnergy >= 25) {
+
+    if (currentEnergy >= 15) {
         srand(time( NULL ) );
-        currentEnergy -= 25;
+        currentEnergy -= 15;
         int critick = rand() % 12 + 1;
         if(critick == 12){
             dmg = strength * 3.5;
@@ -68,12 +68,12 @@ int worrior::attack1(opponentCharacter* opponent){
     return 0;
 }
 
-int worrior::attack2(opponentCharacter* opponent){
+int paladyn::attack2(opponentCharacter* opponent){
     // Potezny cios
     int dmg = 0;
-    if (currentEnergy >= 35) {
+    if (currentEnergy >= 40) {
         srand(time( NULL ) );
-        currentEnergy -= 35;
+        currentEnergy -= 40;
         int critick = rand() % 12 + 1;
         if(critick == 6){ // polowa (jeden z 12)
             cout << "Critick!" <<endl;
@@ -83,7 +83,7 @@ int worrior::attack2(opponentCharacter* opponent){
             dmg = strength * (rand()%(35-20 + 1) + 20) / 10; // losuj z zakresu (nie mozemy randa  double)
             opponent->gainDamage(dmg);
             return dmg;
-            
+
         }
     }
     else{
@@ -92,19 +92,19 @@ int worrior::attack2(opponentCharacter* opponent){
     return 0;
 }
 
-int worrior::attack3(opponentCharacter* opponent){
+int paladyn::attack3(opponentCharacter* opponent){
     // Spirala smierci
     int dmg = 0;
-    if (currentEnergy >= 60) {
+    if (currentMana >= 50) {
         srand(time( NULL ) );
-        currentEnergy -= 60;
+        currentMana -= 50;
         int critick = rand() % 20 + 1;
         if(critick == 10){
             cout << "Critick!" <<endl;
-            return strength * 4.4;
+            return strength * 5.2;
         }
         else{
-            dmg = strength * (rand()%(42-40 + 1) + 40) / 10; // losuj z zakresu (nie mozemy randa  double)
+            dmg = strength * (rand()%(50-46 + 1) + 46) / 10; // losuj z zakresu (nie mozemy randa  double)
             opponent->gainDamage(dmg);
             return dmg;
         }
@@ -115,28 +115,28 @@ int worrior::attack3(opponentCharacter* opponent){
     return 0;
 }
 
-void worrior::gainDamage(int dmg){
+void paladyn::gainDamage(int dmg){
     currentHealth -= dmg;
     this->isDead();
 }
 //
 // Pozostale systemy walki
 
-void worrior::treatCharacter(){
+void paladyn::treatCharacter(){
     currentHealth += treatment * 30;
     if (currentHealth > maxHealth) {
         currentHealth = maxHealth;
     }
 }
 
-void worrior::energyDrink(){
+void paladyn::energyDrink(){
     currentEnergy += 60;
     if (currentEnergy > maxEnergy) {
         currentEnergy = maxEnergy;
     }
 }
 
-void worrior::manaDrink(){
+void paladyn::manaDrink(){
     currentMana += 60;
     if (currentMana > maxMana) {
         currentMana = maxMana;
@@ -144,7 +144,7 @@ void worrior::manaDrink(){
 }
 
 // Wyswietl info o postaci
-void worrior::info(){
+void paladyn::info(){
     cout << "Informacje o postaci"<< endl;
     cout << characterName << endl;
     cout << currentHealth<< endl;
@@ -153,7 +153,7 @@ void worrior::info(){
     // Wyswiet do klasy Label informacje o postaci!
 }
 
-int worrior::infoAboutClass(int number){
+int paladyn::infoAboutClass(int number){
     if(number == 0){
         return this->strength;
     }
@@ -187,15 +187,15 @@ int worrior::infoAboutClass(int number){
     return 0;
 }
 
-string worrior::returnImgPath(){
+string paladyn::returnImgPath(){
     return this->imgPath;
 }
 
-string worrior::returnName(){
+string paladyn::returnName(){
     return this->characterName;
 }
 
-bool worrior::isDead(){
+bool paladyn::isDead(){
     if(currentHealth<=0){
         return true;
     }
@@ -203,41 +203,41 @@ bool worrior::isDead(){
         return false;
 }
 
-bool worrior::eneughAttack1(){
-    if(currentEnergy>=25)
+bool paladyn::eneughAttack1(){
+    if(currentEnergy>=15)
         return true;
     else
         return false;
 }
-bool worrior::eneughAttack2(){
-    if(currentEnergy>=35)
+bool paladyn::eneughAttack2(){
+    if(currentEnergy>=40)
         return true;
     else
         return false;
 }
-bool worrior::eneughAttack3(){
-    if(currentEnergy>=60)
+bool paladyn::eneughAttack3(){
+    if(currentMana>=50)
         return true;
     else
         return false;
 }
 
-string worrior::whatAClass(){
+string paladyn::whatAClass(){
     return whatClass;
 }
 
-void worrior::afterFight(){
+void paladyn::afterFight(){
     currentHealth = maxHealth;
     currentEnergy = maxEnergy;
     currentMana = maxMana;
 
 }
 
-void worrior::setMaxValues(){
+void paladyn::setMaxValues(){
     maxHealth = health *20;
     maxEnergy = energy * 10;
     maxMana = mana * 20;
-    
+
     afterFight();
 }
 

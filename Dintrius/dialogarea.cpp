@@ -15,34 +15,35 @@ dialogArea::dialogArea(QString *tab, std::string kPlayerName, std::string kOppon
     opponentName = kOpponentName;
     numberToStartAction = kNumberToStartAction;
     imageOfOpponent = pathToImgOpponent;
-    imageOfPlayer = QString::fromStdString(pathToImgPlayer);
 
+    // Ustaw obraz gracza
+    imageOfPlayer = QString::fromStdString(pathToImgPlayer);
     ui->pictureOfCharacter->setPixmap(imageOfPlayer);
     ui->pictureOfCharacter->show();
-    QPixmap* pixmap2;
 
-    pixmap2 = new QPixmap(imageOfOpponent);
+    // Ustaw obraz przeciwnika
+    ui->pictureOfEnemy->setPixmap(imageOfOpponent);
+    ui->pictureOfCharacter->show();
 
-    ui->pictureOfEnemy->setPixmap(*pixmap2);
 
-
-    ui->pictureOfEnemy->show();
-
+    // Ustaw templatke
     QPalette sample_palette;
     sample_palette.setColor(QPalette::WindowText, Qt::white);
     ui->nameOfCharacterLabel->setPalette(sample_palette);
     ui->nameOfCharacterLabel->setText(QString::fromStdString(playerName));
+
     ui->nameOfAI->setAlignment(Qt::AlignRight);
     ui->nameOfAI->setPalette(sample_palette);
     ui->nameOfAI->setText(QString::fromStdString(opponentName));
 
     ui->dialogAILabel->setPalette(sample_palette);
-    ui->dialogAILabel->setText(questionsAndAnswers[0]);
 
     ui->questionLabel1->setPalette(sample_palette);
     ui->questionLabel2->setPalette(sample_palette);
     ui->questionLabel3->setPalette(sample_palette);
 
+    // Wyświetl dialog
+    ui->dialogAILabel->setText(questionsAndAnswers[0]);
     ui->questionLabel1->setText(questionsAndAnswers[1]);
     ui->questionLabel2->setText(questionsAndAnswers[2]);
     ui->questionLabel3->setText(questionsAndAnswers[3]);
@@ -53,13 +54,11 @@ dialogArea::~dialogArea()
     delete ui;
 }
 
-
-
 void dialogArea::on_choose1Button_clicked()
 {
-
     ui->dialogAILabel->setText(questionsAndAnswers[4]);
     int buttonNumber = 1;
+
     if(buttonNumber == numberToStartAction){
         textPlusContiueDialog alertFight(questionsAndAnswers[buttonNumber+3]); // Zmienna do otworznia nowego
         alertFight.setModal(true);
