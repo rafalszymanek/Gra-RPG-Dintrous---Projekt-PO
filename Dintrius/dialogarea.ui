@@ -145,7 +145,7 @@
     <enum>Qt::NoFocus</enum>
    </property>
    <property name="text">
-    <string>Choose 1</string>
+    <string>Wybierz 1</string>
    </property>
   </widget>
   <widget class="QPushButton" name="choose3Button">
@@ -161,7 +161,7 @@
     <enum>Qt::NoFocus</enum>
    </property>
    <property name="text">
-    <string>Choose 3</string>
+    <string>Wybierz 3</string>
    </property>
   </widget>
   <widget class="QPushButton" name="choose2Button">
@@ -177,7 +177,7 @@
     <enum>Qt::NoFocus</enum>
    </property>
    <property name="text">
-    <string>Choose 2</string>
+    <string>Wybierz 2</string>
    </property>
   </widget>
   <widget class="QLabel" name="numberLabel2">
